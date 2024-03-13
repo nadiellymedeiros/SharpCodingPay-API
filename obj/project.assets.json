@@ -460,23 +460,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nadie\\.nuget\\packages\\": {},
+    "C:\\Users\\amand\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nadie\\Documents\\Nady\\Curso-Ima\\2024\\hackadev\\Backend\\SharpCodingAPI\\SharpCodingAPI.csproj",
+      "projectUniqueName": "C:\\Users\\amand\\Desktop\\SharpCodingPay-API\\SharpCodingAPI.csproj",
       "projectName": "SharpCodingAPI",
-      "projectPath": "C:\\Users\\nadie\\Documents\\Nady\\Curso-Ima\\2024\\hackadev\\Backend\\SharpCodingAPI\\SharpCodingAPI.csproj",
-      "packagesPath": "C:\\Users\\nadie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nadie\\Documents\\Nady\\Curso-Ima\\2024\\hackadev\\Backend\\SharpCodingAPI\\obj\\",
+      "projectPath": "C:\\Users\\amand\\Desktop\\SharpCodingPay-API\\SharpCodingAPI.csproj",
+      "packagesPath": "C:\\Users\\amand\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\amand\\Desktop\\SharpCodingPay-API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nadie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\amand\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -498,11 +498,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -537,7 +532,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
