@@ -1,24 +1,33 @@
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using SharpCodingAPI.Domains.Enums;
 
 namespace SharpCodingAPI.Domains.Models;
 
+public class Transacoes : Entity
+{
 
-public class Transacao {
-  public  decimal Valor;
-  public string? TipoTransacao;
-  public string? DirecaoTransacao;
-  // public  TipoTransacao TipoTransacao;
-  // public  DirecaoTransacao DirecaoTransacao;
+[Required]
+public decimal Valor { get; set; } 
+
+ public string Historico { get; set; } = null!;
+
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public  DirecaoTransacao DirecaoTransacao {get; set;}
+
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public  TipoTransacao TipoTransacao {get; set;}
+
+public DateTime? CriadoEm { get; set; } = DateTime.Now;
+
+public int UserId {get;set;}
+
+public int NumeroContaDestino { get; set; }
+
+ public int  NumeroContaOrigem {get; set;}
+
+//public User User {get; set;} = null!;
 
 
 
-  // public Transacao (
-  //   decimal valor, 
-  //   TipoTransacao tipoTransacao, 
-  //   DirecaoTransacao direcaoTransacao
-  // ) {
-  //   Valor = valor;
-  //   TipoTransacao = tipoTransacao;
-  //   DirecaoTransacao = direcaoTransacao;
-  // }
 }
