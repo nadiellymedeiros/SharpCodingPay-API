@@ -52,25 +52,25 @@ public IActionResult GetById(int id)
     return Ok(user);
 }
 
-[HttpPatch("{id:int}/islogado")]
-public IActionResult UpdateIsLogado(int id, [FromBody] bool isLogado)
-{
-    var user = _bankDbContext.Users.Find(id);
+// [HttpPatch("{id:int}/islogado")]
+// public IActionResult UpdateIsLogado(int id, [FromBody] bool isLogado)
+// {
+//     var user = _bankDbContext.Users.Find(id);
 
-    if (user == null)
-        return NotFound();
-    user.IsLogado = !user.IsLogado;
+//     if (user == null)
+//         return NotFound();
+//     user.IsLogado = !user.IsLogado;
 
 
-  var result = _bankDbContext.Users.Update(user);
-  _bankDbContext.SaveChanges();
+//   var result = _bankDbContext.Users.Update(user);
+//   _bankDbContext.SaveChanges();
 
-  var UserSalvo = result.Entity;
+//   var UserSalvo = result.Entity;
 
-  return Ok(UserSalvo);
+//   return Ok(UserSalvo);
 
-  // return CreatedAtAction(nameof(GetById), new { UserSalvo.Id }, UserSalvo);
-}
+//   // return CreatedAtAction(nameof(GetById), new { UserSalvo.Id }, UserSalvo);
+// }
 
 
 [HttpPost]
