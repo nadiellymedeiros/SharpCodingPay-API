@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SharpCodingAPI.Domains.Models;
 
-namespace SharpCodingAPI.Domains.DTO.dbContext.cs;
+namespace SharpCodingAPI.Domains.DTO.dbContext;
 
 
 public class BankDbContext : DbContext
