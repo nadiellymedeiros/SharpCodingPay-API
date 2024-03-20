@@ -1,6 +1,72 @@
-@SharpCodingAPI_HostAddress = http://localhost:5292
+@bank_backend_CSharp_HostAddress = http://localhost:5084
 
-GET {{SharpCodingAPI_HostAddress}}/users/
+GET {{bank_backend_CSharp_HostAddress}}/users
 Accept: application/json
 
 ###
+Post {{bank_backend_CSharp_HostAddress}}/login
+Content-Type: application/json
+
+{
+    "Email": "joao@teste.com",
+    "Password": "1234"
+}
+
+###
+GET  {{bank_backend_CSharp_HostAddress}}/login/logout
+Content-Type: application/json
+
+
+
+###
+Post {{bank_backend_CSharp_HostAddress}}/users
+Content-Type: application/json
+
+{  
+   
+   "Email": "paula@teste.com",
+   "Name": "Paula",
+   "Password": "1234",
+   "Telefone": "62997758544",
+   "Cpf": "187574571-9"
+   
+}
+
+###
+GET {{bank_backend_CSharp_HostAddress}}/conta/23
+Accept: application/json
+
+
+###
+GET {{bank_backend_CSharp_HostAddress}}/users/23
+Accept: application/json
+
+###
+DELETE {{bank_backend_CSharp_HostAddress}}/users/delete/13
+Accept: application/json
+
+
+
+###
+
+GET {{bank_backend_CSharp_HostAddress}}/transacoes/23
+Accept: application/json
+
+###
+Post {{bank_backend_CSharp_HostAddress}}/transacoes
+Content-Type: application/json
+
+{
+   "Valor": 1000.00,
+   "DirecaoTransacao": "SAIDA",
+   "TipoTransacao": "SAQUE",
+   "UserId": 23,
+   "numeroContaDestino":100001 ,
+   "NumeroContaOrigem": 100001,
+  "Historico": ""
+  
+
+}
+
+
+
