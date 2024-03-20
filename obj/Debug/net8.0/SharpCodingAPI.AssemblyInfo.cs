@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SharpCodingAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51892365e0786beeefbc15c7a5ceb4a07943d59a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54e253b547c4b8533e51be8ab1363c5cd8f926bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("SharpCodingAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SharpCodingAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
