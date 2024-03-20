@@ -23,60 +23,51 @@ private readonly IConfiguration _configuration;
 
 
   [HttpPost] 
-    public ActionResult<LoginResponseDto> Authenticate([FromBody] LoginRequestDto userRequisicao){
-        
+    public ActionResult<LoginResponseDto> Authenticate([FromBody] LoginRequestDto userRequisicao){        
               
         var autenticado = _bankDbContext.Users.FirstOrDefault(
           (user) => user.Email == userRequisicao.Email && user.Password == userRequisicao.Password
         );  
        
         if(autenticado == null){
-
             return Unauthorized(new MessageResponse("E-mail ou senha inválido!"));
-        }   
-
-      
+        }         
 
           autenticado.IsLogado = true;
 
+        var result = _bankDbContext.Users.Update(autenticado);
+        _bankDbContext.SaveChanges();
 
-  var result = _bankDbContext.Users.Update(autenticado);
-  _bankDbContext.SaveChanges();
+        var UserSalvo = result.Entity;
 
-  var UserSalvo = result.Entity;
+        return Ok(new MessageResponse($"Cliente, {autenticado.Name}, logou com sucesso"));        
+    }
 
 
-  return Ok(new MessageResponse($"Cliente, {autenticado.Name}, logou com sucesso"));
-       
-        
- }
-
-[HttpGet]
-[Route("logout")]
+    [HttpGet]
+    [Route("logout/{id:int}")]
 
     public IActionResult UpdateIsLogado( ){ 
-{
-    // var user = _bankDbContext.Users.Find(id);
+    {
+      // var user = _bankDbContext.Users.Find(id);
 
       var userLogout = _bankDbContext.Users.FirstOrDefault(
           (user) => user.IsLogado == true
-        );  
-     
+        );       
 
-    if (userLogout == null)
+      if (userLogout == null)
         return NotFound();
 
-    userLogout.IsLogado = false;
+      userLogout.IsLogado = false;
 
+     var result = _bankDbContext.Users.Update(userLogout);
+      _bankDbContext.SaveChanges();
 
-  var result = _bankDbContext.Users.Update(userLogout);
-  _bankDbContext.SaveChanges();
+     var UserSalvo = result.Entity;
 
-  var UserSalvo = result.Entity;
+     return Ok(UserSalvo);
 
-  return Ok(UserSalvo);
-
-  // return CreatedAtAction(nameof(GetById), new { UserSalvo.Id }, UserSalvo);
-}
-}
+    // return CreatedAtAction(nameof(GetById), new { UserSalvo.Id }, UserSalvo);
+    }
+  } 
 }
