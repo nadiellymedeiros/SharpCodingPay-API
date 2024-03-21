@@ -22,7 +22,7 @@ public class User : Entity
 
   [Required]
    public string? Telefone { get; set; }
-    public decimal? Saldo { get; set; } = 5000.00m;
+   public decimal? Saldo { get; set; } = 5000.00m;
    public bool IsLogado { get; set; } = false;   
 
    public bool IsActive {get; set;}= true;

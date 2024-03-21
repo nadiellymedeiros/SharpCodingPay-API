@@ -1,6 +1,5 @@
 namespace SharpCodingAPI.Domains.DTO.Responses;
 
-
 public class UserResponseDto
 {
     public string Nome { get; set; } = null!;
