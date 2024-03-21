@@ -61,7 +61,7 @@ Content-Type: application/json
    "DirecaoTransacao": "SAIDA",
    "TipoTransacao": "SAQUE",
    "UserId": 23,
-   "numeroContaDestino":100001 ,
+   "NumeroContaDestino":100001 ,
    "NumeroContaOrigem": 100001,
   "Historico": ""
   

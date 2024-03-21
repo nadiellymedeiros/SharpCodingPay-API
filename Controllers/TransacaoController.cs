@@ -127,7 +127,11 @@ public class TransacoesController : ControllerBase
         if (transacoes.TipoTransacao.Equals(TipoTransacao.SAQUE)) {
             if (user == null)
             {
-            return NotFound("Usuário não encontrado.");
+                return NotFound("Usuário não encontrado.");
+            }
+
+            if(user.Saldo < transacoes.Valor){
+                return BadRequest("Saldo insulficiente");
             }
 
             var transacaoSaque = new Transacoes
