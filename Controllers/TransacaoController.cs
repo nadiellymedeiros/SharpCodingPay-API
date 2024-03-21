@@ -25,12 +25,16 @@ public class TransacoesController : ControllerBase
     {
         var user = _bankDbContext.Users.First(u => u.Id == userId);
 
-           if(user.IsLogado == true){
+     
 
-              var transacoes = _bankDbContext.Transacoes.Where(t => t.UserId == userId ).OrderByDescending(t => t.CriadoEmFormatado).ToList();
+        if(user.IsLogado == true){
 
+            var transacoes = _bankDbContext.Transacoes.Where(t => t.UserId == userId ).ToList().OrderByDescending(t => t.CriadoEm);
+                if(transacoes == null || !transacoes.Any()){
+                return NotFound(new MessageResponse($"Não há transações com o usuário {user.Name}"));
+                 }
 
-        return Ok(transacoes);
+                 return Ok(transacoes);
   
     
     }
