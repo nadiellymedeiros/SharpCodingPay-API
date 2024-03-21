@@ -19,6 +19,7 @@ public  DirecaoTransacao DirecaoTransacao {get; set;}
 public  TipoTransacao TipoTransacao {get; set;}
 
 public DateTime? CriadoEm { get; set; } = DateTime.Now;
+public string CriadoEmFormatado => CriadoEm?.ToString("dd/MM/yyyy HH:mm:ss") ?? "Data não disponível";
 
 public int UserId {get;set;}
 

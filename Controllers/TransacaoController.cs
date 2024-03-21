@@ -27,7 +27,9 @@ public class TransacoesController : ControllerBase
 
            if(user.IsLogado == true){
 
-              var transacoes = _bankDbContext.Transacoes.Where(t => t.UserId == userId ).ToList();
+              var transacoes = _bankDbContext.Transacoes.Where(t => t.UserId == userId ).OrderByDescending(t => t.CriadoEmFormatado).ToList();
+
+
         return Ok(transacoes);
   
     
@@ -89,7 +91,9 @@ public class TransacoesController : ControllerBase
             Valor = transacoes.Valor,
             TipoTransacao = transacoes.TipoTransacao,
             DirecaoTransacao = transacoes.DirecaoTransacao,
-            UserId = contaOrigem!.Id
+            UserId = contaOrigem!.Id,
+            NumeroContaDestino = transacoes.NumeroContaDestino,
+            NumeroContaOrigem= transacoes.NumeroContaOrigem
             };
 
             var transacaoContaDestino = new Transacoes
@@ -98,7 +102,9 @@ public class TransacoesController : ControllerBase
             Valor = transacoes.Valor,
             TipoTransacao = transacoes.TipoTransacao,
             DirecaoTransacao = transacoes.DirecaoTransacao,
-            UserId = contaDestino!.Id
+            UserId = contaDestino!.Id,
+            NumeroContaDestino = transacoes.NumeroContaDestino,
+            NumeroContaOrigem= transacoes.NumeroContaOrigem
             };
 
 
@@ -126,7 +132,9 @@ public class TransacoesController : ControllerBase
             Valor = transacoes.Valor,
             TipoTransacao = transacoes.TipoTransacao,
             DirecaoTransacao = transacoes.DirecaoTransacao,
-            UserId = contaDestino!.Id
+            UserId = contaDestino!.Id,
+            NumeroContaDestino = transacoes.NumeroContaDestino,
+            NumeroContaOrigem= transacoes.NumeroContaOrigem
             };
 
             user.Saldo -= transacoes.Valor;
@@ -149,7 +157,9 @@ public class TransacoesController : ControllerBase
             Valor = transacoes.Valor,
             TipoTransacao = transacoes.TipoTransacao,
             DirecaoTransacao = transacoes.DirecaoTransacao,
-            UserId = contaDestino!.Id
+            UserId = contaDestino!.Id,
+            NumeroContaDestino = transacoes.NumeroContaDestino,
+            NumeroContaOrigem= transacoes.NumeroContaOrigem
             };
 
             user.Saldo += transacoes.Valor;
@@ -162,7 +172,7 @@ public class TransacoesController : ControllerBase
 
         // _bankDbContext.Transacoes.Add(transacoes);
         // _bankDbContext.SaveChanges();        
-        return Ok($"O tipo é: {tipoTransacao}");
+        return Ok();
     //    return Ok("Created!");
     }
 
