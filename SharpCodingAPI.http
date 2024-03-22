@@ -3,29 +3,13 @@
 GET {{bank_backend_CSharp_HostAddress}}/users
 Accept: application/json
 
-###
-Post {{bank_backend_CSharp_HostAddress}}/login
-Content-Type: application/json
-
-{
-    "Email": "joao@teste.com",
-    "Password": "1234"
-}
-
-###
-GET  {{bank_backend_CSharp_HostAddress}}/login/logout
-Content-Type: application/json
-
-
-
-###
 Post {{bank_backend_CSharp_HostAddress}}/users
 Content-Type: application/json
 
 {  
    
-   "Email": "paula@teste.com",
-   "Name": "Paula",
+   "Email": "pedro@teste.com",
+   "Name": "Pedro",
    "Password": "1234",
    "Telefone": "62997758544",
    "Cpf": "187574571-9"
@@ -33,23 +17,27 @@ Content-Type: application/json
 }
 
 ###
-GET {{bank_backend_CSharp_HostAddress}}/conta/23
+Post {{bank_backend_CSharp_HostAddress}}/login
+Content-Type: application/json
+
+{
+    "Email": "nadielly@teste.com",
+    "Password": "1234"
+}
+
+
+###
+GET {{bank_backend_CSharp_HostAddress}}/conta/4
 Accept: application/json
 
 
 ###
-GET {{bank_backend_CSharp_HostAddress}}/users/23
+GET {{bank_backend_CSharp_HostAddress}}/users/4
 Accept: application/json
 
 ###
-DELETE {{bank_backend_CSharp_HostAddress}}/users/delete/13
-Accept: application/json
 
-
-
-###
-
-GET {{bank_backend_CSharp_HostAddress}}/transacoes/23
+GET {{bank_backend_CSharp_HostAddress}}/transacoes/4
 Accept: application/json
 
 ###
@@ -61,12 +49,18 @@ Content-Type: application/json
    "DirecaoTransacao": "SAIDA",
    "TipoTransacao": "SAQUE",
    "UserId": 23,
-   "NumeroContaDestino":100001 ,
-   "NumeroContaOrigem": 100001,
-  "Historico": ""
-  
-
+   "NumeroContaDestino":100002 ,
+   "NumeroContaOrigem": 100003,
+  "Historico": ""  
 }
 
 
+###
+GET  {{bank_backend_CSharp_HostAddress}}/login/logout/4
+Content-Type: application/json
+
+
+###
+DELETE {{bank_backend_CSharp_HostAddress}}/users/delete/7
+Accept: application/json
 
